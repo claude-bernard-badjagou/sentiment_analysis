@@ -24,15 +24,6 @@ def nettoyer_texte(texte: str) -> str:
     texte = re.sub(r" {2,}",            " ", texte)
     return texte.strip()
 
-def interpreter_label(label: str) -> tuple:
-    nb_etoiles = int(label[0])  # "3 stars" → 3
-    if nb_etoiles <= 2:
-        return "NÉGATIF", "😢", "red"
-    elif nb_etoiles == 3:
-        return "NEUTRE", "😐", "orange"
-    else:
-        return "POSITIF", "😊", "green"
-
 # ── Chargement du modèle depuis HuggingFace Hub ───────────────────────────────
 # @st.cache_resource : chargé une seule fois, réutilisé pour toutes les requêtes
 @st.cache_resource
@@ -113,4 +104,5 @@ with col2:
     st.code("Le pire film de ma vie. Ennuyeux du début à la fin.", language=None)
 
 st.caption("Modèle : nlptown/bert-base-multilingual-uncased-sentiment • Streamlit Cloud")
+
 
