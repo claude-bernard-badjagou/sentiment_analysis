@@ -50,7 +50,7 @@ def interpreter_label(label: str) -> tuple:
         return "POSITIF", "😊", "green"
 
 # ── Interface ─────────────────────────────────────────────────────────────────
-st.title("🎬 Analyseur de Sentiment — Critiques de Films")
+st.title("🎬 Analyseur de Sentiment  (Critiques de Films de base)")
 st.markdown("Entrez une critique en **français** et le modèle prédit le sentiment.")
 st.divider()
 
@@ -104,5 +104,6 @@ with col2:
     st.code("Le pire film de ma vie. Ennuyeux du début à la fin.", language=None)
 
 st.caption("Modèle : nlptown/bert-base-multilingual-uncased-sentiment • Streamlit Cloud")
+
 
 
